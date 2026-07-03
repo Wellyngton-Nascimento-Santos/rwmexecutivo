@@ -2,20 +2,25 @@
 <html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
+<!-- Garante escala correta em telemóveis (base da responsividade) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RWM Executivo | Transporte Executivo de Alto Padrão</title>
+<!-- Descrição usada por buscadores (SEO) -->
 <meta name="description" content="RWM Executivo — transporte executivo de luxo, elegância, discrição e segurança para viagens, eventos, aeroportos e diárias.">
+<!-- Pré-conexão acelera o carregamento das fontes do Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fontes: Playfair Display (títulos serifados) e Inter (texto corrido) -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER: barra fixa no topo com logo + botão "Reservar" -->
 <header class="header">
   <div class="header__inner">
     <a href="#" class="brand">
+      <!-- Ícone de carro desenhado em SVG, na cor dourada da marca -->
       <svg class="brand__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3 13L4.5 8.5C4.8 7.6 5.6 7 6.6 7H17.4C18.4 7 19.2 7.6 19.5 8.5L21 13" stroke="#B8935A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <rect x="2" y="13" width="20" height="5.5" rx="1.5" stroke="#B8935A" stroke-width="1.5"/>
@@ -24,11 +29,12 @@
       </svg>
       <span>RWM EXECUTIVO</span>
     </a>
+    <!-- Link âncora que rola até a seção de Serviços -->
     <a href="#servicos" class="header__cta">Reservar</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO: primeira seção, título de impacto + chamada para ação -->
 <section class="hero">
   <div class="hero__inner">
     <h1>Transporte Executivo com<br>Elegância e Segurança</h1>
@@ -37,7 +43,7 @@
   </div>
 </section>
 
-<!-- DIFERENCIAIS -->
+<!-- DIFERENCIAIS: imagem à esquerda + lista de 4 pontos fortes à direita -->
 <section class="diferenciais">
   <div class="container">
     <h2 class="section-title section-title--center">Excelência em Transporte</h2>
@@ -45,10 +51,12 @@
 
     <div class="diferenciais__grid">
       <div class="diferenciais__img">
+        <!-- Trocar por foto real da frota/motorista (pasta img/) -->
         <img src="img/motorista-executivo.jpg" alt="Motorista executivo da RWM ao volante">
       </div>
       <div class="diferenciais__lista">
 
+        <!-- Cada item = ícone de check + título + descrição curta -->
         <div class="diferencial-item">
           <span class="check-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17L19 8" stroke="#B8935A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -94,7 +102,7 @@
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ: título centralizado + perguntas em acordeão (abre/fecha via JS no fim da página) -->
 <section class="faq">
   <div class="container faq__grid">
     <div class="faq__title">
@@ -102,6 +110,7 @@
     </div>
     <div class="faq__list">
 
+      <!-- Cada .faq-item é uma pergunta; a resposta fica escondida até o clique -->
       <div class="faq-item">
         <button class="faq-item__question">
           Como funciona a reserva de um trajeto?
@@ -146,13 +155,14 @@
   </div>
 </section>
 
-<!-- SERVIÇOS -->
+<!-- SERVIÇOS: grid de 4 cards, cada um com detalhes retráteis e botão de reserva -->
 <section class="servicos" id="servicos">
   <div class="container">
     <h2 class="section-title section-title--center">Serviços Prestados</h2>
 
     <div class="servicos__grid">
 
+      <!-- Card de serviço: título, divisor dourado, toggle "Detalhes" (JS) e lista oculta -->
       <div class="servico-card">
         <h3>Viagens</h3>
         <div class="servico-card__divider"></div>
@@ -225,7 +235,7 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- DEPOIMENTOS: grid assimétrico com cards claros (grandes) e escuros (pequenos) -->
 <section class="depoimentos">
   <div class="container">
     <h2 class="section-title section-title--center">Depoimentos</h2>
@@ -257,7 +267,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER: fecha o site com ícone do Instagram e nome da marca -->
 <footer class="footer">
   <a href="#" class="footer__instagram" aria-label="Instagram RWM Executivo">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -269,7 +279,8 @@
   <span class="footer__brand">RWM EXECUTIVO</span>
 </footer>
 
-<!-- BOTÃO WHATSAPP -->
+<!-- BOTÃO WHATSAPP: flutuante, fixo no canto inferior esquerdo em todas as páginas -->
+<!-- Trocar "351900000000" pelo número real da empresa -->
 <a href="https://wa.me/351900000000" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Contactar via WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 2C6.48 2 2 6.48 2 12C2 13.85 2.5 15.58 3.38 17.06L2 22L7.06 20.64C8.5 21.5 10.2 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="white"/>
@@ -278,19 +289,23 @@
 </a>
 
 <script>
+  // Acordeão do FAQ: ao clicar numa pergunta, abre a resposta e fecha as outras
   document.querySelectorAll('.faq-item__question').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var item = btn.closest('.faq-item');
       var isOpen = item.classList.contains('faq-item--open');
 
+      // Fecha qualquer outro item que esteja aberto (só 1 resposta visível por vez)
       document.querySelectorAll('.faq-item--open').forEach(function (openItem) {
         if (openItem !== item) openItem.classList.remove('faq-item--open');
       });
 
+      // Alterna o item clicado entre aberto/fechado
       item.classList.toggle('faq-item--open', !isOpen);
     });
   });
 
+  // Toggle "Detalhes" dos cards de serviço: cada card abre/fecha de forma independente
   document.querySelectorAll('.servico-card__toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var card = btn.closest('.servico-card');

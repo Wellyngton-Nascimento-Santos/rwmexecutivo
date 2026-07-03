@@ -2,6 +2,7 @@
    RWM EXECUTIVO — Dark Luxury Stylesheet
    ========================================================================== */
 
+/* Variáveis globais (paleta de cores, fontes e medidas), reutilizadas em todo o CSS */
 :root {
   --bg-hero: #0F1114;
   --bg-alt-1: #2A2825;
@@ -35,16 +36,19 @@
 
 /* ---------------------------------- Reset ---------------------------------- */
 
+/* Zera margens/paddings padrão do navegador e unifica o box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Rolagem suave ao clicar em links âncora (ex: header -> #servicos) */
 html {
   scroll-behavior: smooth;
 }
 
+/* Estilo base do texto do site inteiro */
 body {
   font-family: var(--font-sans);
   font-size: 16px;
@@ -54,20 +58,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Imagens nunca ultrapassam a largura do container pai */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* Remove sublinhado e herda a cor do texto em todos os links */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* Remove os marcadores padrão (bolinhas) das listas */
 ul {
   list-style: none;
 }
 
+/* Reset dos botões para parecerem elementos normais, não botões do navegador */
 button {
   font-family: inherit;
   border: none;
@@ -75,12 +83,14 @@ button {
   cursor: pointer;
 }
 
+/* Todos os títulos usam a fonte serifada, em off-white */
 h1, h2, h3 {
   font-family: var(--font-serif);
   font-weight: 600;
   color: var(--text-primary);
 }
 
+/* Largura máxima do conteúdo, centralizada na página (usada em quase toda seção) */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -93,6 +103,7 @@ h1, h2, h3 {
   }
 }
 
+/* Título padrão de seção (dourado, com leve espaçamento entre letras) */
 .section-title {
   font-size: 28px;
   letter-spacing: 0.5px;
@@ -100,10 +111,12 @@ h1, h2, h3 {
   margin-bottom: 16px;
 }
 
+/* Variante centralizada, usada nas seções com título no meio da página */
 .section-title--center {
   text-align: center;
 }
 
+/* Parágrafo de apoio abaixo do título de seção */
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
@@ -120,6 +133,7 @@ h1, h2, h3 {
 
 /* ---------------------------------- Buttons ---------------------------------- */
 
+/* Estilo base compartilhado por todos os botões/CTAs do site */
 .btn {
   display: inline-block;
   font-family: var(--font-sans);
@@ -132,6 +146,7 @@ h1, h2, h3 {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+/* Botão principal (CTA do Hero): fundo bege-dourado */
 .btn--primary {
   background-color: var(--btn-bg);
   color: var(--btn-text);
@@ -141,6 +156,7 @@ h1, h2, h3 {
   opacity: 0.88;
 }
 
+/* Botão "Reserve aqui" dentro dos cards de serviço, ocupa a largura toda */
 .btn--card {
   display: block;
   width: 100%;
@@ -157,11 +173,13 @@ h1, h2, h3 {
 
 /* ---------------------------------- Header ---------------------------------- */
 
+/* Barra do topo: fundo preto igual ao Hero, com linha sutil embaixo */
 .header {
   background-color: var(--bg-hero);
   border-bottom: 1px solid var(--border-subtle);
 }
 
+/* Logo à esquerda, botão "Reservar" à direita */
 .header__inner {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -178,6 +196,7 @@ h1, h2, h3 {
   }
 }
 
+/* Nome da marca (ícone + texto), em maiúsculas com letras espaçadas */
 .brand {
   display: flex;
   align-items: center;
@@ -193,6 +212,7 @@ h1, h2, h3 {
   flex-shrink: 0;
 }
 
+/* Botão "Reservar": contorno dourado, preenche ao passar o mouse */
 .header__cta {
   font-size: 13px;
   font-weight: 600;
@@ -211,6 +231,7 @@ h1, h2, h3 {
 
 /* ---------------------------------- Hero ---------------------------------- */
 
+/* Seção de abertura: fundo preto sólido, conteúdo centralizado na tela */
 .hero {
   background-color: var(--bg-hero);
   min-height: 70vh;
@@ -238,6 +259,7 @@ h1, h2, h3 {
   font-size: 16px;
 }
 
+/* No desktop o Hero fica mais alto e o título cresce bastante (efeito de impacto) */
 @media (min-width: 768px) {
   .hero {
     min-height: 75vh;
@@ -260,12 +282,14 @@ h1, h2, h3 {
   padding: var(--section-spacing) 0;
 }
 
+/* No mobile é 1 coluna (imagem em cima, lista embaixo); vira 2 colunas no desktop */
 .diferenciais__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
 }
 
+/* Imagem com proporção fixa 4:3 e cantos arredondados */
 .diferenciais__img img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -273,18 +297,21 @@ h1, h2, h3 {
   border-radius: var(--radius);
 }
 
+/* Lista vertical dos 4 diferenciais, com espaço generoso entre eles */
 .diferenciais__lista {
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
 
+/* Cada linha da lista: ícone de check à esquerda, texto à direita */
 .diferencial-item {
   display: flex;
   gap: 16px;
   align-items: flex-start;
 }
 
+/* Círculo dourado que envolve o ícone de check */
 .check-icon {
   flex-shrink: 0;
   width: 36px;
@@ -306,6 +333,7 @@ h1, h2, h3 {
   color: var(--text-secondary);
 }
 
+/* A partir de 1024px: imagem e lista lado a lado, centralizadas verticalmente */
 @media (min-width: 1024px) {
   .diferenciais__grid {
     grid-template-columns: 1fr 1fr;
@@ -321,6 +349,7 @@ h1, h2, h3 {
   padding: var(--section-spacing) 0;
 }
 
+/* Título e lista empilhados, ambos centralizados na página */
 .faq__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -336,6 +365,7 @@ h1, h2, h3 {
   font-size: 30px;
 }
 
+/* Lista de perguntas com largura limitada, para não ficar esticada em telas largas */
 .faq__list {
   display: flex;
   flex-direction: column;
@@ -345,12 +375,14 @@ h1, h2, h3 {
   margin: 0 auto;
 }
 
+/* Cada pergunta é um card com cantos arredondados */
 .faq-item {
   background-color: var(--bg-alt-1);
   border-radius: 8px;
   overflow: hidden;
 }
 
+/* Botão clicável da pergunta: texto à esquerda, ícone "+" à direita */
 .faq-item__question {
   width: 100%;
   display: flex;
@@ -372,10 +404,12 @@ h1, h2, h3 {
   transition: transform 0.25s ease;
 }
 
+/* Quando o item está aberto (classe adicionada pelo JS), o "+" gira e vira "x" */
 .faq-item--open .faq-item__icon {
   transform: rotate(45deg);
 }
 
+/* Resposta fica escondida (altura 0) até o item receber a classe "aberto" */
 .faq-item__answer {
   max-height: 0;
   overflow: hidden;
@@ -389,6 +423,7 @@ h1, h2, h3 {
   padding-bottom: 20px;
 }
 
+/* Estado aberto: revela a resposta com uma transição suave */
 .faq-item--open .faq-item__answer {
   max-height: 220px;
 }
@@ -400,6 +435,7 @@ h1, h2, h3 {
   padding: var(--section-spacing) 0;
 }
 
+/* Grid dos cards de serviço: 1 coluna no mobile (cresce nos breakpoints abaixo) */
 .servicos__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -407,6 +443,7 @@ h1, h2, h3 {
   margin-top: 48px;
 }
 
+/* Card de serviço em coluna, para o botão "Reserve aqui" ficar sempre embaixo */
 .servico-card {
   background-color: var(--bg-alt-1);
   border-radius: var(--radius);
@@ -420,6 +457,7 @@ h1, h2, h3 {
   font-size: 20px;
 }
 
+/* Linha dourada fina que separa o título do restante do card */
 .servico-card__divider {
   width: 40px;
   height: 2px;
@@ -427,6 +465,7 @@ h1, h2, h3 {
   margin: 14px auto 20px;
 }
 
+/* Botão "Detalhes": texto dourado, aciona o JS que expande a lista */
 .servico-card__toggle {
   display: flex;
   align-items: center;
@@ -444,10 +483,12 @@ h1, h2, h3 {
   transition: transform 0.25s ease;
 }
 
+/* Seta gira 180° quando o card está aberto (classe adicionada pelo JS) */
 .servico-card--open .servico-card__toggle-icon {
   transform: rotate(180deg);
 }
 
+/* Lista de bullets escondida por padrão (altura 0) */
 .servico-card__details {
   max-height: 0;
   overflow: hidden;
@@ -455,6 +496,7 @@ h1, h2, h3 {
   flex-grow: 1;
 }
 
+/* Estado aberto: revela a lista de bullets do card */
 .servico-card--open .servico-card__details {
   max-height: 200px;
 }
@@ -474,6 +516,7 @@ h1, h2, h3 {
   position: relative;
 }
 
+/* Marcador customizado (seta dourada) no lugar da bolinha padrão da lista */
 .servico-card li::before {
   content: '▾';
   position: absolute;
@@ -482,12 +525,14 @@ h1, h2, h3 {
   font-size: 12px;
 }
 
+/* Tablet: 2 cards por linha */
 @media (min-width: 768px) {
   .servicos__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Desktop: os 4 cards lado a lado */
 @media (min-width: 1024px) {
   .servicos__grid {
     grid-template-columns: repeat(4, 1fr);
@@ -501,27 +546,32 @@ h1, h2, h3 {
   padding: var(--section-spacing) 0;
 }
 
+/* Nesta seção o título fica em off-white (fundo já é claro o suficiente) */
 .depoimentos .section-title {
   color: var(--text-primary);
 }
 
+/* 1 coluna no mobile; vira grid 2x2 no tablet/desktop (ver breakpoint abaixo) */
 .depoimentos__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
+/* Cartão de depoimento: cantos bem arredondados e sombra suave (efeito premium) */
 .depoimento-card {
   border-radius: 16px;
   padding: 28px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Variante clara: fundo bege-taupe, texto escuro */
 .depoimento-card--light {
   background-color: var(--card-light);
   color: var(--btn-text);
 }
 
+/* Variante escura: fundo cinza-taupe escuro, texto claro */
 .depoimento-card--dark {
   background-color: var(--card-dark);
   color: var(--text-primary);
@@ -557,6 +607,7 @@ h1, h2, h3 {
 
 /* ---------------------------------- Footer ---------------------------------- */
 
+/* Rodapé: mesmo tom preto do Hero, para fechar o ciclo visual do site */
 .footer {
   background-color: var(--bg-footer);
   padding: 60px var(--pad-mobile);
@@ -581,6 +632,7 @@ h1, h2, h3 {
 
 /* ---------------------------------- WhatsApp Button ---------------------------------- */
 
+/* Botão circular verde, fixo na tela (não rola com a página) */
 .whatsapp-btn {
   position: fixed;
   bottom: 24px;
@@ -597,6 +649,7 @@ h1, h2, h3 {
   transition: transform 0.2s ease;
 }
 
+/* Leve aumento de tamanho ao passar o mouse, para indicar que é clicável */
 .whatsapp-btn:hover {
   transform: scale(1.08);
 }
