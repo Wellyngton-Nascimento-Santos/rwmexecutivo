@@ -173,10 +173,13 @@ h1, h2, h3 {
 
 /* ---------------------------------- Header ---------------------------------- */
 
-/* Barra do topo: fundo preto igual ao Hero, com linha sutil embaixo */
+/* Barra do topo: fundo preto igual ao Hero, com linha sutil embaixo. Fica fixa acompanhando a rolagem */
 .header {
   background-color: var(--bg-hero);
   border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 /* Logo à esquerda, botão "Reservar" à direita */
@@ -233,7 +236,12 @@ h1, h2, h3 {
 
 /* Seção de abertura: fundo preto sólido, conteúdo centralizado na tela */
 .hero {
+  position: relative;
   background-color: var(--bg-hero);
+  background-image: url('img/rwm-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -241,7 +249,17 @@ h1, h2, h3 {
   padding: 60px var(--pad-mobile);
 }
 
+/* Overlay escuro sobre a imagem de fundo, para o texto continuar legível */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
 .hero__inner {
+  position: relative;
+  z-index: 1;
   max-width: 700px;
   text-align: center;
 }
@@ -289,12 +307,13 @@ h1, h2, h3 {
   gap: 40px;
 }
 
-/* Imagem com proporção fixa 4:3 e cantos arredondados */
+/* Imagem sem corte: escala mantendo a proporção original (800x500), só bordas e sombra */
 .diferenciais__img img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  display: block;
   border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Lista vertical dos 4 diferenciais, com espaço generoso entre eles */
